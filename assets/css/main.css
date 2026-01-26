@@ -1,11 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i");
 
-/*
-	Story by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -32,6 +27,14 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+
+.page-border {
+    border-left: 5px solid #000;
+    border-right: 5px solid #000;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 
 ol, ul {
 	list-style: none;
@@ -7210,54 +7213,58 @@ input, select, textarea {
 		background-color: rgba(0, 0, 0, 0.125);
 	}
 
-/* Wrapper (style1) */
+/* Wrapper (style1) - with extra space for left/right borders */
+.wrapper.style1 > .inner {
+    padding: 7rem 3.5rem 5rem 3.5rem;  /* Original padding: top, right, bottom, left */
+    margin: 0 auto;
+    max-width: 100%;
+    width: 64rem;
 
-	.wrapper.style1 > .inner {
-		padding: 7rem 3.5rem 5rem 3.5rem ;
-		margin: 0 auto;
-		max-width: 100%;
-		width: 64rem;
-	}
+    /* Optional: prevent content from touching the borders */
+    box-sizing: border-box;
+}
 
-		.wrapper.style1 > .inner.medium {
-			width: 48rem;
-		}
+.wrapper.style1 > .inner.medium {
+    width: 48rem;
+}
 
-		.wrapper.style1 > .inner.small {
-			width: 32rem;
-		}
+.wrapper.style1 > .inner.small {
+    width: 32rem;
+}
 
-	@media screen and (max-width: 1680px) {
+/* Responsive adjustments */
+@media screen and (max-width: 1680px) {
+    .wrapper.style1 > .inner {
+        padding: 5rem 2.5rem 3rem 2.5rem;
+    }
+}
 
-		.wrapper.style1 > .inner {
-			padding: 5rem 2.5rem 3rem 2.5rem ;
-		}
+@media screen and (max-width: 1280px) {
+    .wrapper.style1 > .inner {
+        padding: 4rem 4rem 2rem 4rem;
+    }
+}
 
-	}
+@media screen and (max-width: 980px) {
+    .wrapper.style1 > .inner {
+        padding: 4.5rem 3rem 2.5rem 3rem;
+    }
+}
 
-	@media screen and (max-width: 1280px) {
+@media screen and (max-width: 736px) {
+    .wrapper.style1 > .inner {
+        padding: 3rem 2rem 1rem 2rem;
+    }
+}
 
-		.wrapper.style1 > .inner {
-			padding: 4rem 4rem 2rem 4rem ;
-		}
+/* Optional: add extra horizontal spacing so content doesn’t touch fixed borders */
+@media screen and (min-width: 1200px) {
+    .wrapper.style1 > .inner {
+        padding-left: calc(3.5rem + 20px);  /* 20px buffer for left border */
+        padding-right: calc(3.5rem + 20px); /* 20px buffer for right border */
+    }
+}
 
-	}
-
-	@media screen and (max-width: 980px) {
-
-		.wrapper.style1 > .inner {
-			padding: 4.5rem 3rem 2.5rem 3rem ;
-		}
-
-	}
-
-	@media screen and (max-width: 736px) {
-
-		.wrapper.style1 > .inner {
-			padding: 3rem 2rem 1rem 2rem ;
-		}
-
-	}
 
 /* Wrapper (style2) */
 
