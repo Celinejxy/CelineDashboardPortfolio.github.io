@@ -8601,3 +8601,20 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+			/* Make image larger, text narrower for dense visuals */
+.spotlight.wide-image .image {
+	flex: 0 0 65%;
+	max-width: 65%;
+}
+
+.spotlight.wide-image .content {
+	flex: 0 0 35%;
+	max-width: 35%;
+}
+@media screen and (max-width: 980px) {
+	.spotlight.wide-image .image,
+	.spotlight.wide-image .content {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
